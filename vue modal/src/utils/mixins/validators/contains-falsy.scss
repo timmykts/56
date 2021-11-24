@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/// @argument {list} $list
+
+/// @return {boolean}
+///
+/// @access private
+
+@function _contains-falsy($list) {
+  @each $item in $list {
+    @if not $item {
+      @return true;
+    }
+  }
+
+  @return false;
+}

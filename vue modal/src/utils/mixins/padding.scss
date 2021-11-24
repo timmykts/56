@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+/// @argument {list} $values
+/// @example scss
+///   .element-one {
+///     @include padding(null 1rem);
+///   }
+///   .element-one {
+///     padding-left: 1rem;
+///     padding-right: 1rem;
+///   }
+///
+/// @example scss
+///   .element-two {
+///     @include padding(10vh null 10px 5%);
+///   }
+///
+///   // CSS Output
+///   .element-two {
+///     padding-bottom: 10px;
+///     padding-left: 5%;
+///     padding-top: 10vh;
+///   }
+///
+/// @require {mixin} _directional-property
+
+@mixin padding($values) {
+  @include _directional-property(padding, null, $values);
+}
